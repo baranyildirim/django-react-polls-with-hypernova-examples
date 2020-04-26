@@ -7,9 +7,11 @@ You might find the [slides at Slideshare](https://www.slideshare.net/Frojd/integ
 # Installation
 
 ## Django
-1. Clone repo 
-2. Install python requirements and activate virtualenv with `pipenv sync && pipenv shell`
-3. Run migrations and start devserver:
+1. Clone repo
+2. Create and activate virtualenv `python -m venv venv && source venv/bin/activate`
+3. Install packages `poetry install`
+4. Open django app `cd django_project`
+5. Run migrations and start devserver:
 ```
 cd django_project
 ./manage.py migrate
