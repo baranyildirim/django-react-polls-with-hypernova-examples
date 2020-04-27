@@ -22,7 +22,6 @@ cd django_project
 ## Frontend dev-server
 1. run `cd frontend && npm i`
 2. run `npm run build` to build javascript assets to django
-3. run `npm start` to start the local devserver on :7001
 
 More details of different commands/configuration in frontend/readme.md
 

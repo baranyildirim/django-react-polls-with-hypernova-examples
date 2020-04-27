@@ -113,3 +113,5 @@ Hastur
 django_project/core/static/core/*
 !django_project/core/static/core/.gitkeep
 
+
+old_frontend
