@@ -1,201 +1,68 @@
-# React sass starterkit
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Description
+## Available Scripts
 
-An opinioated frontend boilerplate for work with react and sass, using webpack as taskrunner and devserver for testing components. It uses both HMR for the react frontend, and browsersync for the css.
+In the project directory, you can run:
 
-It also includes a small cli for scaffolding new components quickly.
+### `npm start`
 
-The intended use for this boilerplate is to create components for frontend use, and not a fully working site out of the box.
-It is building the js/css/img/fonts files that should be used with another backend of your choise (node, django, episerver etc) from an exposed component (Components, Containers).
-It also have support for translations throuh i18next.
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Installation and quickstart
+The page will reload if you make edits.<br />
+You will also see any lint errors in the console.
 
-1. Clone the project
-2. `npm install`
-3. `npm run scaffold`
-4. `npm start`
-5. Done!
+### `npm test`
 
-Visit [http://localhost:7001](http://localhost:7001) and look at the container and component you just created. It should autoopen when running the start command.
+Launches the test runner in the interactive watch mode.<br />
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## CLI
+### `npm run build`
 
-The cli will scaffold a new component with scss, js, test and automatically add it to index.js and index.scss.
+Builds the app for production to the `build` folder.<br />
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Create a component will both scss and classbase
+The build is minified and the filenames include the hashes.<br />
+Your app is ready to be deployed!
 
-    npm run new ComponentName
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Container components:
+### `npm run eject`
 
-    npm run new ContainerName -- -C containers
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-This will add a new component inside the containers folder (and also add the scss file to index.scss)
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Delete a component that have been created with the cli
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-    npm run delete ComponentName
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-index.scss and index.js will be automatically updated when adding a component through the cli.
+## Learn More
 
-Subcomponents can be created as well:
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-    npm run new ComponentName SubComponentName
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-This will create a new component inside the first component. Subcomponents can be added as many levels down as you need.
+### Code Splitting
 
-## Internationalization
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-Support for multiple languages is served through [i18next](https://www.i18next.com/) and can be found in the app/i18n folder
+### Analyzing the Bundle Size
 
-## Devserver
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-Use the devserver to look at your components. It is a modified version of webpack-dev-server.
+### Making a Progressive Web App
 
-Run it like this:
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-    npm start
+### Advanced Configuration
 
-And visit your list of components at: [http://localhost:7000](http://localhost:7000)
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-## Building css/js
+### Deployment
 
-For regular watch:
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-    npm run watch
+### `npm run build` fails to minify
 
-For a fullscale watch (serverside, testserver, files):
-
-    npm run multiwatch
-
-For a regular build:
-
-    npm run build
-
-For productionbuild
-
-    npm run build:prod
-
-For all tests:
-
-    npm test
-
-For single test:
-
-    npm test MyComponent
-
-## Publishing static files
-
-Will make a render to the specified folder (outputPathHtmlFolder) to simulate the devserver as a standalone app that can for instance be uploaded to amazon S3.
-
-    npm run publish
-
-## .frontendrc and overrides
-
-The recommended way to change settings is by overriding the .frontendrc file that exists in internals folder.
-
-Copy the .frontendrc file and place it in the root folder, next to webpack.config.js, then change the values to what you would need.
-
-Current settings are:
-
-```javascript
-// All paths are relative to the application root
-{
-    // General
-    "outputPath": "dist/static", // Where files will be placed when using watch or build
-    "outputPathJsFolder": "js", // Folder for javascript
-    "outputPathCssFolder": "css", // Folder for css
-    "outputPathHtmlFolder": "dist/html", // Folder for html (empty will place in root)
-    "webpackConfig": "./webpack.config.js", // Config used
-    "appFolder": "app", // Foldername for the application
-    "componentsFolder": "components", // Foldername where components will be created
-    "containersFolder": "containers", // Foldername where containers will be created
-
-    // Server
-    "port": 7000,
-    "rootServerTemplatePath": "/internals/templates/server/", // Templatefolder for servertemplates
-    "publicPath": "/static/", // External static path, should be the same for devserver and the actual production path
-
-    // Cli
-    "rootCliTemplatePath": "/internals/templates/cli/", // Templatefolder for cli
-    "scssFolder": "scss", // Folder for scss files
-    "createScss": true, // Create a scss file with the component
-    "createClass": true, // Create the class version of a react component
-    "createPure": false, // Create the functional version of a react component
-    "createIndex": true, // Create an index.js file inside the ComponentName folder
-    "createData": true, // Create a ComponentName.json
-    "createTest": true, // Create a ComponentName.test.js for unittesting
-    "updateIndexScss": true, // Updated the default index.scss with the new component
-    "updateIndexJs": true // Updated the index.js with the new component
-    "rootFolder": "./", // Only used for overriding in tests
-}
-```
-
-## Overriding templates
-
-Currently all templates can be overridden, they all exists in internals/templates/cli and interal/templates/server
-
-Recommended way is to copy the templatefolders and change the rootServerTemplatePath and rootCliTemplatePath in .frontendrc file
-
-You can also with the same means override the devserver.css and devserver.js file that exists in rootServerTemplatePath
-
-## Throubleshooting and support
-
-### Using react addons? Getting trouble with multiple react loaded
-
-Change externals to look like this in your webpack.config.js
-
-```javascript
-externals: {
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-    'react/lib/ReactTransitionGroup': 'React.addons.TransitionGroup',
-    'react/lib/ReactCSSTransitionGroup': 'React.addons.CSSTransitionGroup',
-},
-```
-
-And change vendor.js to:
-
-```javascript
-/*eslint-disable no-undef*/
-require('expose-loader?React!react');
-require('expose-loader?ReactDOM!react-dom');
-require('expose-loader?React.addons.CSSTransitionGroup!react/lib/ReactCSSTransitionGroup');
-/*eslint-enable no-undef*/
-```
-
-If you are running into similar problems with react loading multiple times, it might be that you need to add some more external library (especially if you are using the addons libraries).
-
-### Using jQuery and plugins?
-
-To use jquery and with old plugins you can with ease use the script loader for webpack (`npm install script-loader`), and add them both to vendor.js in a similar way as react is done (require the addon after you expose jquery).
-
-```javascript
-require('expose-loader?jQuery!jquery');
-require('script-loader!jquery.flipster');  // Example plugin
-```
-
-### Serverside rendering
-
-There is support to compile out the components with babel only:
-
-    npm run ssr
-    npm run ssr:watch
-
-These components can with ease be used together with for example [Hastur](https://github.com/Frojd/Hastur) to create serverside rendering for your project.
-
-#### window is not defined
-
-Common problem with serverside rendering, if you are using window on pre componentDidMount, you will need to check if it exists. Preferably thou you will need to set a state in componentDidMount for it to be rendered correctly on the serverside, however just to check if window exists you can write this:
-
-```javascript
-if(typeof window !== 'undefined') {
-    // do you window things here
-}
-```
-
-## License
-
-react-sass-starterkit is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
