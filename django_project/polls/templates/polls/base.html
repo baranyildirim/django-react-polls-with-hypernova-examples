@@ -1,5 +1,6 @@
-{% load staticfiles %}
+{% load static %}
 {% load react %}
+{% load create_react_app %}
 
 <!doctype html>
 <html class="no-js" lang="sv">
@@ -8,7 +9,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{% static 'core/css/index.css' %}" type="text/css" />
+
+    {% extract_elements 'core/build/index.html' 'stylesheet' %}
 </head>
 
 <body onload="document.querySelector('html').classList.remove('no-js');">
@@ -16,10 +18,8 @@
         {% react_render component=react_container props=react_props %}
     {% endblock main %}
 
-    <script type="text/javascript" src="{% static 'core/js/vendor.js' %}"></script>
-    <script type="text/javascript" src="{% static 'core/js/index.js' %}"></script>
+    {% extract_elements 'core/build/index.html' 'script' %}
 
     {% react_print %}
 </body>
-
 </html>
