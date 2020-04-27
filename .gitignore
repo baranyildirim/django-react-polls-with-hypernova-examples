@@ -107,7 +107,7 @@ venv.bak/
 #
 .idea
 .DS_Store
-django_project/static
+*/django_project/static
 
 Hastur
 django_project/core/static/core/*
