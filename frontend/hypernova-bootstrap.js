@@ -1,5 +1,3 @@
-// require('ignore-styles');
-
 // create-react-app requirement
 process.env.NODE_ENV = 'production';
 
