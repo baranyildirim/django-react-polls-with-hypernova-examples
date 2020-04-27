@@ -1,0 +1,23 @@
+{% load static %}
+{% load react %}
+{% load create_react_app %}
+
+<!doctype html>
+<html class="no-js" lang="sv">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% extract_elements 'core/build/index.html' 'stylesheet' %}
+</head>
+
+<body onload="document.querySelector('html').classList.remove('no-js');">
+    {% block main %}
+        {% react_render component=react_container props=react_props no_placeholder=1 %}
+    {% endblock main %}
+
+    {% extract_elements 'core/build/index.html' 'script' %}
+</body>
+</html>

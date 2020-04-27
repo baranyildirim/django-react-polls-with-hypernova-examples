@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "django-react-polls-with-hypernova-example"
+version = "0.1.0"
+description = ""
+authors = ["Martin Sandström <martin@marteinn.se>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+django = "^3.0.5"
+django-rest-framework = "^0.1.0"
+django-react-templatetags = {git = "https://github.com/frojd/django-react-templatetags.git", rev = "develop"}
+requests = "^2.23.0"
+beautifulsoup4 = "^4.9.0"
+html5lib = "^1.0.1"
+hypernova = "^0.0.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
