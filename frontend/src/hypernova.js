@@ -16,7 +16,7 @@ let config = {
             const componentName = name.split(".").slice(-1)[0];
             const Containers = require("./containers/");
             const Component = Containers[componentName];
-            return renderReact(name, Component);
+            return renderReact(componentName, Component);
         } catch (e) {
             console.log(e)
             return null;
