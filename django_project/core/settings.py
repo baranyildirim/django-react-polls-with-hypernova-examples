@@ -128,5 +128,6 @@ STATIC_ROOT = './static/'
 
 
 # SSR
-REACT_RENDER_HOST = 'http://localhost:3000/'
+REACT_RENDER_HOST = 'http://localhost:3030/batch'
+REACT_SSR_SERVICE = "django_react_templatetags.ssr.hypernova.HypernovaService"
 REACT_COMPONENT_PREFIX = 'Containers.'

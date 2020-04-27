@@ -69,7 +69,13 @@ version = "5.4.0"
 Django = ">=1.11"
 
 [package.extras]
+hypernova = ["hypernova"]
 ssr = ["requests"]
+
+[package.source]
+reference = "e41208b3e71622dd9a190771088803edc63c9ea3"
+type = "git"
+url = "https://github.com/frojd/django-react-templatetags.git"
 
 [[package]]
 category = "main"
@@ -111,6 +117,18 @@ chardet = ["chardet (>=2.2)"]
 datrie = ["datrie"]
 genshi = ["genshi"]
 lxml = ["lxml"]
+
+[[package]]
+category = "main"
+description = "Python client for Hypernova, https://github.com/airbnb/hypernova"
+name = "hypernova"
+optional = false
+python-versions = "*"
+version = "0.0.3"
+
+[package.dependencies]
+requests = "*"
+six = "*"
 
 [[package]]
 category = "main"
@@ -192,7 +210,7 @@ python-versions = "*"
 version = "0.5.1"
 
 [metadata]
-content-hash = "64561c241bb08ccf10882d21f329c426d13695f1ce7868f485b8c36de2721fea"
+content-hash = "5afb13f552599dde99f07799d81ee673e91da0ea9565924e8085d1f9d4883fb7"
 python-versions = "^3.6"
 
 [metadata.files]
@@ -217,9 +235,7 @@ django = [
     {file = "Django-3.0.5-py3-none-any.whl", hash = "sha256:642d8eceab321ca743ae71e0f985ff8fdca59f07aab3a9fb362c617d23e33a76"},
     {file = "Django-3.0.5.tar.gz", hash = "sha256:d4666c2edefa38c5ede0ec1655424c56dc47ceb04b6d8d62a7eac09db89545c1"},
 ]
-django-react-templatetags = [
-    {file = "django_react_templatetags-5.4.0.tar.gz", hash = "sha256:76374744db62319c11321300a6743920fe8466a3dad7a96988adbe369298539a"},
-]
+django-react-templatetags = []
 django-rest-framework = [
     {file = "django-rest-framework-0.1.0.tar.gz", hash = "sha256:47a8f496fa69e3b6bd79f68dd7a1527d907d6b77f009e9db7cf9bb21cc565e4a"},
 ]
@@ -230,6 +246,10 @@ djangorestframework = [
 html5lib = [
     {file = "html5lib-1.0.1-py2.py3-none-any.whl", hash = "sha256:20b159aa3badc9d5ee8f5c647e5efd02ed2a66ab8d354930bd9ff139fc1dc0a3"},
     {file = "html5lib-1.0.1.tar.gz", hash = "sha256:66cb0dcfdbbc4f9c3ba1a63fdb511ffdbd4f513b2b6d81b80cd26ce6b3fb3736"},
+]
+hypernova = [
+    {file = "hypernova-0.0.3-py3-none-any.whl", hash = "sha256:6ae20189fbd5f51512ad819cf8c43a99fdb89a2e0fbdec96bfcce8e1ed2f069b"},
+    {file = "hypernova-0.0.3.tar.gz", hash = "sha256:5b721777f86e7bc664a600b9460b1d233635ce3c0dc05bcc7391f8db26aba2d4"},
 ]
 idna = [
     {file = "idna-2.9-py2.py3-none-any.whl", hash = "sha256:a068a21ceac8a4d63dbfd964670474107f541babbd2250d61922f029858365fa"},
