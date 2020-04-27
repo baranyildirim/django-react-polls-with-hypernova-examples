@@ -1,5 +1,10 @@
-# Django React Polls with Hypernova example
+# Example 2: Use Hypernova and leverage the built in renderReact on the front end as well.
 This is an example implementation of a fully React-rendered frontend in Django using Hypernova and Create React App.
+
+- In this example to rely fully on `renderReact` provided by Hypernova to initialize components
+- Components that are used are wrapped in `renderReact` and exported to both Hypernova and client side
+- We dont use the template tag `react_print`
+- We remove the DRTT placeholder by adding `no_placeholder=1` to the template tag `render_react`
 
 ## Installation
 

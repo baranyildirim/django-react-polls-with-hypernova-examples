@@ -1,5 +1,9 @@
-# Django React Polls with Hypernova example
+# Example 1: Integrate Hypernova with the built in DRTT (Django React Templatetags) ReactDOM.hydration
 This is an example implementation of a fully React-rendered frontend in Django using Hypernova and Create React App.
+
+- In this example we take adventage of Hypernova as SSR Service
+- We hydrate components, using ReactDOM.hydrate, by targeting the Hypernova placeholder
+- We dont use the Hypernova provided HOC `renderReact` on the client side
 
 ## Installation
 
