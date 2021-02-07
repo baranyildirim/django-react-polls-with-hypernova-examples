@@ -6,6 +6,11 @@ This is an example implementation of a fully React-rendered frontend in Django u
 - We dont use the template tag `react_print`
 - We remove the DRTT placeholder by adding `no_placeholder=1` to the template tag `render_react`
 
+## Requirements
+
+- Python 3.6+
+- Node v12.15 or lower (https://github.com/standard-things/esm/issues/868#issuecomment-594480715 prevents us from running Node v12.16+)
+
 ## Installation
 
 ### Django

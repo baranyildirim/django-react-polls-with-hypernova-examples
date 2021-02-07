@@ -5,6 +5,11 @@ This is an example implementation of a fully React-rendered frontend in Django u
 - We hydrate components, using ReactDOM.hydrate, by targeting the Hypernova placeholder
 - We dont use the Hypernova provided HOC `renderReact` on the client side
 
+## Requirements
+
+- Python 3.6+
+- Node v12.15 or lower (https://github.com/standard-things/esm/issues/868#issuecomment-594480715 prevents us from running Node v12.16+)
+
 ## Installation
 
 ### Django
